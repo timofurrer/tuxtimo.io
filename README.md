@@ -1,6 +1,6 @@
 # tuxtimo.me
 
-My Personal website :cake:
+My Personal website :cake: !
 
 ## Copyright and license
 
