@@ -24,7 +24,7 @@ defaults:
 
 # Build settings
 destination: _site
-paginate: 10
+#paginate: 10
 permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
@@ -35,5 +35,5 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
-gems: ['jekyll-paginate']
+#gems: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
