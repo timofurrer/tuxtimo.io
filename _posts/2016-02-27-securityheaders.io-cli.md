@@ -69,5 +69,5 @@ As you can see there is a `--json` option to get the scan results as a JSON obje
 Please leave me your feedback! Use this [Issue Tracker][github-issues] for any issues you may encounter! Have fun!
 
 [securityheadersio]: https://securityheaders.io
-[github-repo]: https://github.com/timofurrer/securityheaders.io
+[github-repo]: https://github.com/timofurrer/securityheaders
 [github-issues]: https://github.com/timofurrer/securityheaders/issues
