@@ -4,7 +4,7 @@ description: '... Personal Notebook and things I want to share ...'
 url: 'https://tuxtimo.me'
 baseurl: '/'
 # google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+disqus_shortname: 'tuxtimo'
 
 author:
   name: 'Timo Furrer'
