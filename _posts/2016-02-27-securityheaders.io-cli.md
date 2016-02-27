@@ -11,7 +11,7 @@ It provides you a simple way to take a look at a server configuration by analyzi
 Why should I be interested in these headers? Well, there are a lot of tools out there to scan a server and point out possible vulnerabilities of specific versions of services running on the server. For example per default a *nginx* server will add the *Server* HTTP Attribute to all response with a value similar to `nginx/1.5.6`. Or an Apache server on a raspbian gives something like this per default `Server: Apache/2.4.10 (Raspbian)`. This makes it very easy for an attacker to search for possible vulnerabilities of your server - You want to obscure and hide this information.
 There are other types of headers - headers which help to prevent certain types of attacks. There is for example a *X-XSS-Protection* header to protect you again some type of *XSS* vulnerabilities. As well as headers to harden your SSL connection like the *Strict-Transport-Security* header.
 
-## The webservices
+## The Website
 
 Let's take a quick look at the [SecurityHeaders.io][securityheadersio] webinterface and scan the *github.com* URL:
 
