@@ -2,8 +2,8 @@
 layout: post
 title: SecurityHeaders.io CLI
 date: 2016-02-27 12:34:40
-categories: [securityheaders, tools, hacking]
-tags: [tools, hacking, pentest]
+categories: [securityheaders, tools, security]
+tags: [tools, security, pentest]
 ---
 Recently I discovered the awesome [SecurityHeaders.io][securityheadersio] service - A project by Scott Helme.
 It provides you a simple way to take a look at a server configuration by analyzing the HTTP headers of a response to a specific request to an URL. It then points out improvements you can make to tighten up your server configuration.
