@@ -13,12 +13,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ site.title }}">
-  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:site" content="@{{ site.author.twitter_username }}">
+  <meta name="twitter:creator" content="@{{ site.author.twitter_username }}">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ site.title }}">
-  <meta property="og:description" content="{{ site.description }}">
+
+{% if page.title %}
+  <meta name="twitter:title" content="{{ page.title | truncate: 70 }}">
+  <meta property="og:title" content="{{ page.title | truncate: 70 }}">
+{% else %}
+  <meta name="twitter:title" content="{{ site.title | truncate: 70 }}">
+  <meta property="og:title" content="{{ site.title | truncate: 70 }}">
+{% endif %}
+{% if page.url %}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+{% endif %}
+{% if page.title %}
+  <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
+  <meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
+{% else %}
+  <meta name="twitter:description" content="{{ site.description | truncate: 200 }}">
+  <meta property="og:description" content="{{ site.description | truncate: 200 }}">
+{% endif %}
 
   <link rel="apple-touch-icon" sizes="48x48" href="{{ "images/favicons/tux/tux_48x48.png" | prepend: site.baseurl }}">
   <link rel="apple-touch-icon" sizes="64x64" href="{{ "images/favicons/tux/tux_64x64.png" | prepend: site.baseurl }}">
