@@ -32,5 +32,13 @@ Or specify the server - maybe a password configuration is not far:
 
 To be clear, I don't want to invite or challenge you to find passwords and do bad things with them - **No** - I want to show you how easy it is to find passwords in source code and with that I __want you to be very careful__ when pushing to your repository. Even simple statements in a your `.gitignore` can help preventing you from uploading secret files like private keys.
 
+## Check your own repositories
+
+You can easily check if your own repositories contain secrets you don't want to share with the whole world. Just append `user:<YOURUSERNAME>` to your query. Here are some examples using the above search query examples:
+
+- `heroku password user:<YOURUSERNAME>`
+- `NickServ identify path:irssi user:<YOURUSERNAME>`
+- `BEGIN RSA path:id_rsa user:<YOURUSERNAME>`
+
 > Just be careful with what you publish
 > **And don't be an asshole!**
