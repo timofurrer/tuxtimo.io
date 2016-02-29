@@ -1,6 +1,6 @@
 # Site settings
 title: Timo's Thoughts
-description: '... Personal Notebook and things I want to share ...'
+description: '... Things I want to share ...'
 url: 'https://tuxtimo.me'
 baseurl: '/'
 google_analytics: 'UA-74408617-1'
