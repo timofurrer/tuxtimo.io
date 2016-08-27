@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/tuxtimo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://tuxtimo.me
+  * I am tuxtimo (https://keybase.io/tuxtimo) on keybase.
+  * I have a public key with fingerprint CFC6 2A1D 8884 01A1 93E2  7DFA 9670 4219 D330 4F22
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120912cadd8f15f7498deb88c14ad495da81891baf9a4c94067ae525e860f7fc68a0a",
+            "fingerprint": "cfc62a1d888401a193e27dfa96704219d3304f22",
+            "host": "keybase.io",
+            "key_id": "96704219d3304f22",
+            "kid": "01017d4cf55f6079ff0f77779bfadf7b392d643df6a59f1cf1356907596c498e86b20a",
+            "uid": "be2e327ad05180295884d75e69be0c19",
+            "username": "tuxtimo"
+        },
+        "service": {
+            "hostname": "tuxtimo.me",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1472282796,
+    "expire_in": 157680000,
+    "prev": "e1a45af79fd5f686cf88446ea3775f4cecb413993dae460f089f5f5b0eba0a72",
+    "seqno": 16,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owFtUn1MVWUYv1xE4cblQ8KkUNaprZUE55x7vl7SQVeFhIgEAUvc9T3nvAdOcD+8
+X6BEKE2azYKxgcpFy4HBzKLtmopjmBYDJMe1WyuElSyNdNS4iLIArfey/KOt9593
+z/P+nt/ze37v06gP1WhDWmzGBD+ZR4QM3xY1xZcyzlQTolXeQ6RVE+Vo6UIVMnI4
+TeWqTKQRJEWTgKIlKMuCQrEKzwBBRqIgSBQDZQawMhQoAVAiVABkJMCQHA8RS7NI
+4EiFVyROgCQkkglFtZQiu82uWpyYVsIPNKRkQRAYkoIUMCCalxUIOJ5kaArIBgPJ
+KDSNC8usjmAFFidCB0pRrTiHA9OSvP/BP9JNUrzMSArLKhzJA0XBavABogJlhRcN
+gJY5xiArHGSBQkkKZWA5QPIs4CQ8IlYv0ku6XUt0IqKRgeahTLKUQNKAxbplnkUc
+EBEpUSAIdCC7BZoRRjtdVU7VbCVqkgmcdKsSCvoaHOS/gBQcJBM2u9VplawVOF/m
+dNocacE65x5bEFiJRNO/FCZRtcjYRFzhRnaHarUQaRRGSpgJQymGp2mB5gGXTKAq
+m2pHJjWIYHlOIPEJ9kFuTIkoyLBQwZYUydgbgZMUPAzDIWjgeVZhJCSJDGUAwCBD
+xOBPJAWgsAorkkjEX8kHPXag3RYrJse9nLAUkzrUUgt0uuyIqNEd1CYu04RoNcvD
+tMH90ugiYh4tnX5njKZh64sFi+3qR3d+TfKpq7f4I3pOP/ugK+mb3NlcqqgrruQl
+sPZgww/n1/D57OW+rL210hObmenacPdPowTz9HZJX9x6I+Dc5Bu8kl0zsjErdDri
+9ciT456obZU5xyeaogZ7qxbfu3SysPOYnPlnILv47C8Nb3kXVyhzy+sd/bntG8E4
+c61gna8TtVf4jVPtEz3sM4HDxouDScc2uCo/mLzPL9vPAXNv/Hybt5Uzjr26EH14
+JuOe//3Vb5asML92YH3tZ8PSVDT5crMnJs1rp2eudqZeNobU15/x1NWty/lZc2vR
+EMu3kLsXdPvqNd4L4ektqU99WLE2x2Pt08YNDVz3RXrjdmSV+i+eCklJqNvxbuX3
+7tk/zLLL7NNFHShtrjtScf/tuOHMsTuRjR03T7V8OrfVsyr2q+l7s19GgPihyatr
+dfvstXfPPdZEPnyub5zNHknv0raWhd3cvtBYI+QXu6cG55MG6LMbCvvHCucKpG7N
+purHTyR++4a+bch1NzDK7HpypuFEojFsf+bEoQii9evZj4/mLVR98fyD9L7TRYH1
+F8rH/N6B4tsvPEwQmncVLtp0JhX20GtWzWfaO6L7fu897rl1aCR/b9cr7d5Pplfu
+LLkS3mYa/dt8pCs1wxcvrbx+7q+qo4HPOywTpTe+e+e3yW39g4n6vB/Pd+u3XJsN
+3dzUHdv4Dw==
+=kvad
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/tuxtimo
+
+==================================================================
