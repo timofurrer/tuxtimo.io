@@ -1,0 +1,12 @@
+/* TEAM */
+Developer & Designer: Timo Furrer
+Twitter: @tuxtimo
+GitHub: timofurrer
+twtxt: https://tuxtimo.me/twtxt.txt
+Site: https://tuxtimo.me
+Location: San Francisco, CA, US
+
+/* SITE */
+Last update: 2016/02/25
+Standards: HTML5, CSS3
+Software: vim, git
