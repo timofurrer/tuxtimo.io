@@ -23,6 +23,8 @@ url: "https://tuxtimo.me" # the base hostname & protocol for your site, e.g. htt
 twitter_username: tuxtimo
 github_username:  timofurrer
 
+permalink: posts/:year/:month/:day/:title.html
+
 # Build settings
 #markdown: kramdown
 markdown: redcarpet
