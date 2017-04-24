@@ -4,7 +4,7 @@ layout: default
 <div class="container post-container">
     <article id="post-page">
         <h2>{%if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %}</h2>
-        <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{ page.date | date_to_string }}</time>
+        <span class="post-meta">By {{ page.author }} -&nbsp;</span><time datetime="{{ page.date | date_to_xmlschema }}" class="post-meta">{{ page.date | date_to_string }}</time>
         <div class="content">
             {{ content }}
         </div>

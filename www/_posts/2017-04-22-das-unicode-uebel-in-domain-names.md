@@ -2,6 +2,7 @@
 layout: post
 title:  "You've been phished! - Das Unicode-Uebel in Domain Names"
 date:   2017-04-22 17:13:50 +0200
+author: Timo Furrer
 categories: unicode security phishing
 ---
 
