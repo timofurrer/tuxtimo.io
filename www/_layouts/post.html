@@ -8,5 +8,10 @@ layout: default
         <div class="content text-justify">
             {{ content }}
         </div>
+        <hr>
+        <span class="post-meta">Posted under:</span>
+        {% for category in page.categories %}
+        <span class="label label-default">{{ category }}</span>
+        {% endfor %}
     </article>
 </div>
