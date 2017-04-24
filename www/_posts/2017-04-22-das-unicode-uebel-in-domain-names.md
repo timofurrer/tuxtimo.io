@@ -13,7 +13,7 @@ Tun Sie mir den gefallen und besuchen Sie die Firmen Website unter [alexa.com] u
 Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie auch den Unterschied in der Adressleiste entdeckt?
 
 <br>
-<img src="https://raw.githubusercontent.com/timofurrer/idn-homograph-attack/master/results/alexa.com_addressbar_comparison.png?token=AA9ifICxTXqP6qtDp-DspmjbFTZaPMxaks5ZBgcEwA%3D%3D" alt="alexa.com firefox addressbar comparison" class="center-image shadow">
+<img src="https://raw.githubusercontent.com/timofurrer/idn-homograph-attack/master/results/alexa.com_addressbar_comparison.png?token=AA9ifICxTXqP6qtDp-DspmjbFTZaPMxaks5ZBgcEwA%3D%3D" alt="alexa.com firefox addressbar comparison" class="img-responsive center-block img-thumbnail shadow-block">
 <br>
 
 Was geht da vorsich? Ist das wirklich die gleiche Adresse? Wurde gerade mein Computer mit einem Virus infisziert?
