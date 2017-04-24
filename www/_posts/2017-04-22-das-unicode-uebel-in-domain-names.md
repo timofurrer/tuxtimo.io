@@ -1,10 +1,18 @@
 ---
 layout: post
-title:  "You've been phished! - Das Unicode-Uebel in Domain Names"
+title:  "Das Unicode-Uebel in Domain Names"
 date:   2017-04-22 17:13:50 +0200
 author: Timo Furrer
 categories: unicode security phishing
 ---
+
+Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?
+
+Bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
+Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.
+Ist man ein bisschen paranoider schaut man sich vielleicht die Adresse nochmals in der Adressleiste des Browsers an und ueberprueft ein allfaelliges SSL Zertifikat.
+
+Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen nicht zu unterscheiden waere? ...
 
 Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com die Daten ueber Seitenabrufe von Websites
 sammelt, analysiert und kommerziell zur Verfuegung stellt.
@@ -23,8 +31,27 @@ Nein, da ist weder ein Virus im Spiel noch ist das die gleiche Adresse die da in
 Je nach Schriftart die der Browser benutzt um die Adresse darzustellen, ist jedoch nur ein leichter bis gar kein Unterschied von blossem Auge auszumachen.
 
 Was auf [alexa.com](http://аӏеха.com) zu sehen ist, ist eine Demonstration eines sogenannten [IDN Homograph Attack]s.
-Diese Attacke zeigt, dass es moeglich ist mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.
+Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.
+
+Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] (IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen,
+sodass Webseiten Adressen auch in anderen Sprachen mit nativen Zeichen angezeigt werden koennen.
+Bereits bei dessen Einfuehrung im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.
+
+Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer die Browser fast unmoeglich zu machen ist, gab es immer wieder Probleme beim Versuch
+diese "Sicherheitsluecke" in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich fuer dieses Phishingriskio verantwortlich zu sein.
+Sie argumentieren damit, dass die Domain Name Registrars dafuer verantwortlich seien nur Domain Names zu vergeben die visuell nicht mit einer bereits registrierten verwechselt werden koennten.
+
+Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng mit seiner Demonstration [apple.com](https://www.аррӏе.com/) das [Interesse der Browserhersteller], dieses Phishingrisiko zu minimieren, wieder geweckt.
+Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlicht, welche Adressen mit Verwechselungsrisiko mit [Punycode] kodiert, sodass diese nur im [ASCII] Zeichensatz darstellt werden.
+So wird aus der risikobehafteten Adresse [alexa.com](http://www.аӏеха.com) die Adresse [xn--80aao8dw1b.com](http://xn--80aao8dw1b.com), welche nicht mehr so einfach verwechselt wird.
+Andere Browser wie Mozilla Firefox oder Opera warten immer noch auf einen entsprechenden Fix.
+
+
 
 [alexa.com]: http://alexa.com
 [аӏеха.com]: http://аӏеха.com
 [IDN Homograph Attack]: https://en.wikipedia.org/wiki/IDN_homograph_attack
+[Internationalized domain names]: https://en.wikipedia.org/wiki/Internationalized_domain_name
+[Interesse der Browserhersteller]: https://bugs.chromium.org/p/chromium/issues/detail?id=683314
+[Punycode]: https://de.wikipedia.org/wiki/Punycode
+[ASCII]: https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange
