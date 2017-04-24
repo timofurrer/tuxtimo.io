@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-24T23:04:37+02:00</updated><id>http://localhost:4000/</id><title type="html">tuxtimo.me</title><subtitle>This website belongs to an enthusiastic Hacker who loves Free Open Source Software, Linux, Python and Computer Security.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-24T23:43:07+02:00</updated><id>http://localhost:4000/</id><title type="html">tuxtimo.me</title><subtitle>This website belongs to an enthusiastic Hacker who loves Free Open Source Software, Linux, Python and Computer Security.
 </subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/posts/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-04-22T17:13:50+02:00</published><updated>2017-04-22T17:13:50+02:00</updated><id>http://localhost:4000/posts/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/posts/welcome-to-jekyll">&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
@@ -12,7 +12,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Das Unicode-Uebel in Domain Names</title><link href="http://localhost:4000/posts/das-unicode-uebel-in-domain-names" rel="alternate" type="text/html" title="Das Unicode-Uebel in Domain Names" /><published>2017-04-22T17:13:50+02:00</published><updated>2017-04-22T17:13:50+02:00</updated><id>http://localhost:4000/posts/das-unicode-uebel-in-domain-names</id><content type="html" xml:base="http://localhost:4000/posts/das-unicode-uebel-in-domain-names">&lt;p&gt;Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?&lt;/p&gt;
 
-&lt;p&gt;Bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
+&lt;p&gt;Bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an, ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
 Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.
 Ist man ein bisschen paranoider schaut man sich vielleicht die Adresse nochmals in der Adressleiste des Browsers an und ueberprueft ein allfaelliges SSL Zertifikat.&lt;/p&gt;
 
@@ -31,21 +31,27 @@ Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie 
 
 &lt;p&gt;Was geht da vorsich? Ist das wirklich die gleiche Adresse? Wurde gerade mein Computer mit einem Virus infisziert?&lt;/p&gt;
 
-&lt;p&gt;Nein, da ist weder ein Virus im Spiel noch ist das die gleiche Adresse die da in der Adressleiste steht.
-Je nach Schriftart die der Browser benutzt um die Adresse darzustellen, ist jedoch nur ein leichter bis gar kein Unterschied von blossem Auge auszumachen.&lt;/p&gt;
+&lt;p&gt;Nein, da ist weder ein Virus im Spiel noch ist das die gleiche Adresse die da in der Adressleiste steht.&lt;/p&gt;
 
 &lt;p&gt;Was auf &lt;a href=&quot;http://%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com&quot;&gt;alexa.com&lt;/a&gt; zu sehen ist, ist eine Demonstration eines sogenannten &lt;a href=&quot;https://en.wikipedia.org/wiki/IDN_homograph_attack&quot;&gt;IDN Homograph Attack&lt;/a&gt;s.
 Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.&lt;/p&gt;
 
-&lt;p&gt;Dies wurde ermoeglicht durch die Implementation von &lt;a href=&quot;IDN&quot;&gt;Internationalized domain names&lt;/a&gt;, die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen,
-sodass Webseiten Adressen auch in anderen Sprachen mit nativen Zeichen angezeigt werden koennen.
-Bereits bei dessen Einfuehrung im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.&lt;/p&gt;
+&lt;p&gt;Dies wurde ermoeglicht durch die Implementation von &lt;a href=&quot;IDN&quot;&gt;Internationalized domain names&lt;/a&gt;, die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
+Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen als Englisch mit nativen Zeichen angezeigt werden koennen.
+Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
+Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
+Beispielsweise ist das kleine &lt;code&gt;a&lt;/code&gt; im latinischen Alphabet kaum vom kleinen kyrillischen &lt;code&gt;а&lt;/code&gt; zu unterscheiden oder auch das latinische kleine &lt;code&gt;e&lt;/code&gt; vom kyrillischen kleinen &lt;code&gt;е&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bereits bei der Einfuehrung von IDN im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.&lt;/p&gt;
 
 &lt;p&gt;Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer die Browser fast unmoeglich zu machen ist, gab es immer wieder Probleme beim Versuch
-diese &amp;quot;Sicherheitsluecke&amp;quot; in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich fuer dieses Phishingriskio verantwortlich zu sein.
+diese &amp;quot;Sicherheitsluecke&amp;quot; in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich, fuer dieses Phishingriskio, verantwortlich zu sein.
 Sie argumentieren damit, dass die Domain Name Registrars dafuer verantwortlich seien nur Domain Names zu vergeben die visuell nicht mit einer bereits registrierten verwechselt werden koennten.&lt;/p&gt;
 
 &lt;p&gt;Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng mit seiner Demonstration &lt;a href=&quot;https://www.%D0%B0%D1%80%D1%80%D3%8F%D0%B5.com/&quot;&gt;apple.com&lt;/a&gt; das &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=683314&quot;&gt;Interesse der Browserhersteller&lt;/a&gt;, dieses Phishingrisiko zu minimieren, wieder geweckt.
 Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlicht, welche Adressen mit Verwechselungsrisiko mit &lt;a href=&quot;https://de.wikipedia.org/wiki/Punycode&quot;&gt;Punycode&lt;/a&gt; kodiert, sodass diese nur im &lt;a href=&quot;https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange&quot;&gt;ASCII&lt;/a&gt; Zeichensatz darstellt werden.
-So wird aus der risikobehafteten Adresse &lt;a href=&quot;http://www.%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com&quot;&gt;alexa.com&lt;/a&gt; die Adresse &lt;a href=&quot;http://xn--80aao8dw1b.com&quot;&gt;xn--80aao8dw1b.com&lt;/a&gt;, welche nicht mehr so einfach verwechselt wird.
-Andere Browser wie Mozilla Firefox oder Opera warten immer noch auf einen entsprechenden Fix.&lt;/p&gt;</content><author><name>Timo Furrer</name></author><summary type="html">Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?</summary></entry></feed>
+So wird aus der risikobehafteten Adresse &lt;a href=&quot;http://www.%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com&quot;&gt;alexa.com&lt;/a&gt; die Adresse &lt;a href=&quot;http://xn--80aao8dw1b.com&quot;&gt;xn--80aao8dw1b.com&lt;/a&gt;, welche nicht mehr so einfach verwechselt wird.&lt;/p&gt;
+
+&lt;p&gt;Andere Browser wie Mozilla Firefox oder Opera warten immer noch auf einen entsprechenden Fix.&lt;/p&gt;
+
+&lt;p&gt;Weitere IDN Homograph Attack Demos sind unter &lt;a href=&quot;https://%D0%BE%D1%80%D0%B5%D0%B3%D0%B0.com&quot;&gt;opera.com&lt;/a&gt; und &lt;a href=&quot;http://%D1%80%D2%BB%D1%80.net&quot;&gt;php.net&lt;/a&gt; zu finden.&lt;/p&gt;</content><author><name>Timo Furrer</name></author><summary type="html">Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?</summary></entry></feed>

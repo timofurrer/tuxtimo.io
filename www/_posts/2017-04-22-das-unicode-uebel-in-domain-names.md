@@ -8,7 +8,7 @@ categories: unicode security phishing
 
 Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?
 
-Bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
+Bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an, ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
 Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.
 Ist man ein bisschen paranoider schaut man sich vielleicht die Adresse nochmals in der Adressleiste des Browsers an und ueberprueft ein allfaelliges SSL Zertifikat.
 
@@ -28,23 +28,29 @@ Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie 
 Was geht da vorsich? Ist das wirklich die gleiche Adresse? Wurde gerade mein Computer mit einem Virus infisziert?
 
 Nein, da ist weder ein Virus im Spiel noch ist das die gleiche Adresse die da in der Adressleiste steht.
-Je nach Schriftart die der Browser benutzt um die Adresse darzustellen, ist jedoch nur ein leichter bis gar kein Unterschied von blossem Auge auszumachen.
 
 Was auf [alexa.com](http://аӏеха.com) zu sehen ist, ist eine Demonstration eines sogenannten [IDN Homograph Attack]s.
 Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.
 
-Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] (IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen,
-sodass Webseiten Adressen auch in anderen Sprachen mit nativen Zeichen angezeigt werden koennen.
-Bereits bei dessen Einfuehrung im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.
+Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] (IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
+Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen als Englisch mit nativen Zeichen angezeigt werden koennen.
+Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
+Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
+Beispielsweise ist das kleine `a` im latinischen Alphabet kaum vom kleinen kyrillischen `а` zu unterscheiden oder auch das latinische kleine `e` vom kyrillischen kleinen `е`.
+
+Bereits bei der Einfuehrung von IDN im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.
 
 Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer die Browser fast unmoeglich zu machen ist, gab es immer wieder Probleme beim Versuch
-diese "Sicherheitsluecke" in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich fuer dieses Phishingriskio verantwortlich zu sein.
+diese "Sicherheitsluecke" in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich, fuer dieses Phishingriskio, verantwortlich zu sein.
 Sie argumentieren damit, dass die Domain Name Registrars dafuer verantwortlich seien nur Domain Names zu vergeben die visuell nicht mit einer bereits registrierten verwechselt werden koennten.
 
 Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng mit seiner Demonstration [apple.com](https://www.аррӏе.com/) das [Interesse der Browserhersteller], dieses Phishingrisiko zu minimieren, wieder geweckt.
 Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlicht, welche Adressen mit Verwechselungsrisiko mit [Punycode] kodiert, sodass diese nur im [ASCII] Zeichensatz darstellt werden.
 So wird aus der risikobehafteten Adresse [alexa.com](http://www.аӏеха.com) die Adresse [xn--80aao8dw1b.com](http://xn--80aao8dw1b.com), welche nicht mehr so einfach verwechselt wird.
+
 Andere Browser wie Mozilla Firefox oder Opera warten immer noch auf einen entsprechenden Fix.
+
+Weitere IDN Homograph Attack Demos sind unter [opera.com](https://орега.com) und [php.net](http://рһр.net) zu finden.
 
 
 
