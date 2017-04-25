@@ -8,15 +8,14 @@ categories: unicode security phishing
 
 Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?
 
-Bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an, ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
+Genau, bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an, ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
 Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.
 Ist man ein bisschen paranoider schaut man sich vielleicht die Adresse nochmals in der Adressleiste des Browsers an und ueberprueft ein allfaelliges SSL Zertifikat.
 
-Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen nicht zu unterscheiden waere? ...
+Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen von einer Phishing-Seite nicht zu unterscheiden waere? ...
 
-Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com die Daten ueber Seitenabrufe von Websites
+Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com, die Daten ueber Seitenabrufe von Webseiten
 sammelt, analysiert und kommerziell zur Verfuegung stellt.
-Die Firmen Website ist unter alexa.com publiziert.
 
 Tun Sie mir den gefallen und besuchen Sie die Firmen Website unter [alexa.com] und anschliessend folgende Website: [alexa.com](http://www.аӏеха.com).
 Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie auch den Unterschied in der Adressleiste entdeckt?
@@ -25,14 +24,14 @@ Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie 
 <img src="https://raw.githubusercontent.com/timofurrer/idn-homograph-attack/master/results/alexa.com_addressbar_comparison.png?token=AA9ifICxTXqP6qtDp-DspmjbFTZaPMxaks5ZBgcEwA%3D%3D" alt="alexa.com firefox addressbar comparison" class="img-responsive center-block img-thumbnail shadow-block">
 <br>
 
-Was geht da vorsich? Ist das wirklich die gleiche Adresse? Wurde gerade mein Computer mit einem Virus infisziert?
+Was geht da vorsich? Ist das wirklich die gleiche Adresse? Ist da eine Malware mit im Spiel?
 
-Nein, da ist weder ein Virus im Spiel noch ist das die gleiche Adresse die da in der Adressleiste steht.
+Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen die da in der Adressleisten stehen.
 
 Was auf [alexa.com](http://аӏеха.com) zu sehen ist, ist eine Demonstration eines sogenannten [IDN Homograph Attack]s.
 Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.
 
-Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] (IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
+Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] \(IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
 Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen als Englisch mit nativen Zeichen angezeigt werden koennen.
 Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
 Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
@@ -44,7 +43,7 @@ Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer
 diese "Sicherheitsluecke" in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich, fuer dieses Phishingriskio, verantwortlich zu sein.
 Sie argumentieren damit, dass die Domain Name Registrars dafuer verantwortlich seien nur Domain Names zu vergeben die visuell nicht mit einer bereits registrierten verwechselt werden koennten.
 
-Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng mit seiner Demonstration [apple.com](https://www.аррӏе.com/) das [Interesse der Browserhersteller], dieses Phishingrisiko zu minimieren, wieder geweckt.
+Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng das [Interesse der Browserhersteller], dieses Phishingrisiko zu minimieren, wieder geweckt.
 Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlicht, welche Adressen mit Verwechselungsrisiko mit [Punycode] kodiert, sodass diese nur im [ASCII] Zeichensatz darstellt werden.
 So wird aus der risikobehafteten Adresse [alexa.com](http://www.аӏеха.com) die Adresse [xn--80aao8dw1b.com](http://xn--80aao8dw1b.com), welche nicht mehr so einfach verwechselt wird.
 

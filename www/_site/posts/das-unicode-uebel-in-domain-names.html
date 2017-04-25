@@ -18,15 +18,14 @@
         <div class="content text-justify">
             <p>Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?</p>
 
-<p>Bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an, ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
+<p>Genau, bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an, ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
 Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.
 Ist man ein bisschen paranoider schaut man sich vielleicht die Adresse nochmals in der Adressleiste des Browsers an und ueberprueft ein allfaelliges SSL Zertifikat.</p>
 
-<p>Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen nicht zu unterscheiden waere? ...</p>
+<p>Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen von einer Phishing-Seite nicht zu unterscheiden waere? ...</p>
 
-<p>Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com die Daten ueber Seitenabrufe von Websites
-sammelt, analysiert und kommerziell zur Verfuegung stellt.
-Die Firmen Website ist unter alexa.com publiziert.</p>
+<p>Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com, die Daten ueber Seitenabrufe von Webseiten
+sammelt, analysiert und kommerziell zur Verfuegung stellt.</p>
 
 <p>Tun Sie mir den gefallen und besuchen Sie die Firmen Website unter <a href="http://alexa.com">alexa.com</a> und anschliessend folgende Website: <a href="http://www.%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com">alexa.com</a>.
 Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie auch den Unterschied in der Adressleiste entdeckt?</p>
@@ -35,14 +34,14 @@ Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie 
 <img src="https://raw.githubusercontent.com/timofurrer/idn-homograph-attack/master/results/alexa.com_addressbar_comparison.png?token=AA9ifICxTXqP6qtDp-DspmjbFTZaPMxaks5ZBgcEwA%3D%3D" alt="alexa.com firefox addressbar comparison" class="img-responsive center-block img-thumbnail shadow-block">
 <br></p>
 
-<p>Was geht da vorsich? Ist das wirklich die gleiche Adresse? Wurde gerade mein Computer mit einem Virus infisziert?</p>
+<p>Was geht da vorsich? Ist das wirklich die gleiche Adresse? Ist da eine Malware mit im Spiel?</p>
 
-<p>Nein, da ist weder ein Virus im Spiel noch ist das die gleiche Adresse die da in der Adressleiste steht.</p>
+<p>Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen die da in der Adressleisten stehen.</p>
 
 <p>Was auf <a href="http://%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com">alexa.com</a> zu sehen ist, ist eine Demonstration eines sogenannten <a href="https://en.wikipedia.org/wiki/IDN_homograph_attack">IDN Homograph Attack</a>s.
 Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.</p>
 
-<p>Dies wurde ermoeglicht durch die Implementation von <a href="IDN">Internationalized domain names</a>, die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
+<p>Dies wurde ermoeglicht durch die Implementation von <a href="https://en.wikipedia.org/wiki/Internationalized_domain_name">Internationalized domain names</a> (IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
 Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen als Englisch mit nativen Zeichen angezeigt werden koennen.
 Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
 Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
@@ -54,7 +53,7 @@ Beispielsweise ist das kleine <code>a</code> im latinischen Alphabet kaum vom kl
 diese &quot;Sicherheitsluecke&quot; in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich, fuer dieses Phishingriskio, verantwortlich zu sein.
 Sie argumentieren damit, dass die Domain Name Registrars dafuer verantwortlich seien nur Domain Names zu vergeben die visuell nicht mit einer bereits registrierten verwechselt werden koennten.</p>
 
-<p>Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng mit seiner Demonstration <a href="https://www.%D0%B0%D1%80%D1%80%D3%8F%D0%B5.com/">apple.com</a> das <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=683314">Interesse der Browserhersteller</a>, dieses Phishingrisiko zu minimieren, wieder geweckt.
+<p>Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng das <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=683314">Interesse der Browserhersteller</a>, dieses Phishingrisiko zu minimieren, wieder geweckt.
 Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlicht, welche Adressen mit Verwechselungsrisiko mit <a href="https://de.wikipedia.org/wiki/Punycode">Punycode</a> kodiert, sodass diese nur im <a href="https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange">ASCII</a> Zeichensatz darstellt werden.
 So wird aus der risikobehafteten Adresse <a href="http://www.%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com">alexa.com</a> die Adresse <a href="http://xn--80aao8dw1b.com">xn--80aao8dw1b.com</a>, welche nicht mehr so einfach verwechselt wird.</p>
 
