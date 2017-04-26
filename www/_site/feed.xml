@@ -1,5 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-26T18:13:50+02:00</updated><id>http://localhost:4000/</id><title type="html">tuxtimo.me</title><subtitle>This website belongs to an enthusiastic Hacker who loves Free Open Source Software, Linux, Python and Computer Security.
-</subtitle><entry><title type="html">Das Unicode-Uebel in Domain Names</title><link href="http://localhost:4000/posts/das-unicode-uebel-in-domain-names" rel="alternate" type="text/html" title="Das Unicode-Uebel in Domain Names" /><published>2017-04-22T17:13:50+02:00</published><updated>2017-04-22T17:13:50+02:00</updated><id>http://localhost:4000/posts/das-unicode-uebel-in-domain-names</id><content type="html" xml:base="http://localhost:4000/posts/das-unicode-uebel-in-domain-names">&lt;p&gt;Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-26T22:24:00+02:00</updated><id>http://localhost:4000/</id><title type="html">tuxtimo.me</title><subtitle>This website belongs to an enthusiastic Hacker who loves Free Open Source Software, Linux, Python and Computer Security.
+</subtitle><entry><title type="html">colorful - Terminal string styling done right, in Python</title><link href="http://localhost:4000/posts/colorful-python" rel="alternate" type="text/html" title="colorful - Terminal string styling done right, in Python" /><published>2017-04-26T17:13:50+02:00</published><updated>2017-04-26T17:13:50+02:00</updated><id>http://localhost:4000/posts/colorful-python</id><content type="html" xml:base="http://localhost:4000/posts/colorful-python">&lt;p&gt;Almost three weeks ago I&amp;#39;ve published an initial release of &lt;a href=&quot;https://github.com/timofurrer/colorful&quot;&gt;colorful&lt;/a&gt; on PyPI and GitHub
+and it already got some attention by having a few stars over 200 on GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;colorful&lt;/strong&gt; is a Python package which provides an expressive and easy to use API to style
+strings to output in your terminal. Hence the short description &lt;em&gt;Terminal string styling done right, in Python&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s neither a new invention nor the first package in the Python ecosystem which provides similar support.
+Thus, not a big deal ... until you want to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;have full 24bit true color support&lt;/li&gt;
+&lt;li&gt;choose between other available color modes like the 8 or 256 ANSI colors&lt;/li&gt;
+&lt;li&gt;nest styled strings&lt;/li&gt;
+&lt;li&gt;not mess up the &lt;code&gt;len()&lt;/code&gt; on your styled strings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All these features were things on my wishlist for quite some time.
+So I&amp;#39;ve decided to have a look at some popular packages like colorama, termcolor and blessings and see if I can
+come up with some patches which would contribute the above mentioned features.
+After some time digging into the docs and code of those projects I just couldn&amp;#39;t fit my features and ideas into
+their architecture, design or set of already available features -
+I wanted to have a clean and human-ready API without having to deal with a legacy one.&lt;/p&gt;
+
+&lt;p&gt;A day or two later I did &lt;code&gt;git init colorful&lt;/code&gt; and started hacking on it.&lt;/p&gt;
+
+&lt;p&gt;In the beginning I just wanted to have some quick prototype to have a proof-of-concept for my API ideas.
+So I didn&amp;#39;t even bother about termcap or terminfo at all which turned out to be not that bad of a decision.
+You&amp;#39;ll read later why.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s have a look at some of the initial API ideas:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Use method names to style strings, like many other support (blessings, coleur, ..)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bold_red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Spam and eggs&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Use string formatting&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;{colorful.bold_red}Spam and eggs{colorful.reset}&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# combining and piping&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Spam and eggs&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# nesting&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39; blue &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nested&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# string length&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Spam and eggs&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# change the color mode&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;use_true_colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;use_256_ansi_colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;disable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All these features were easier to implement than I initially thought. Most of the time I just had to implement
+the correct data model protocols like &lt;code&gt;__str__&lt;/code&gt;, &lt;code&gt;__len__&lt;/code&gt;, &lt;code&gt;__add__&lt;/code&gt;, &lt;code&gt;__or__&lt;/code&gt; on my classes to make my API work.&lt;/p&gt;
+
+&lt;p&gt;What helped a lot were my &lt;a href=&quot;https://github.com/timofurrer/colorful/tree/master/tests&quot;&gt;pytest tests&lt;/a&gt; which I&amp;#39;ve writting in advanced during the thinking process of how one should
+use &lt;em&gt;colorful&lt;/em&gt;. I recommend everyone to do the same: to think about how a user of your module or package would like to interact with it.
+That&amp;#39;s key when designing an API!&lt;/p&gt;
+
+&lt;p&gt;Once I&amp;#39;ve had my tests passing I started writing some documentation and with that some new feature ideas came up:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;support for &lt;a href=&quot;https://en.wikipedia.org/wiki/X11_color_names&quot;&gt;X11 color names&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;support for custom color names assigned to custom RGB values&lt;/li&gt;
+&lt;li&gt;support for predefined styles&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With those ideas &lt;em&gt;colorful&lt;/em&gt; gained some new features:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# use X11 rgb.txt color names&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lightCoral_on_snow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Spam and eggs&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# define custom color palettes&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update_palette&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;mint&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#c5e8c8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Spam and eggs&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# use predefined color styles&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;use_style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;solarized&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colorful&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red_on_green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Spam and eggs&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At the moment &lt;em&gt;colorful&lt;/em&gt;s API was already extended with helper functions like &lt;code&gt;colorful.print()&lt;/code&gt; or &lt;code&gt;colorful.format()&lt;/code&gt; and more.
+I recommend you to have a look at the documentation here: &lt;a href=&quot;https://github.com/timofurrer/colorful&quot;&gt;https://github.com/timofurrer/colorful&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&amp;quot;done right&amp;quot;, doesn&amp;#39;t that imply using terminfo?&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;colorful&lt;/em&gt; uses hardcoded ANSI escape sequences to create styled strings. In the beginning this was just meant to be used in the prototype
+and replaced with proper ANSI codes from the appropriate terminfo database once I&amp;#39;m happy with the API.
+However, terminfo turned out to be quite, ..., &lt;em&gt;&amp;quot;outdated&amp;quot;&lt;/em&gt;. For example a major feature I wanted to have is true colors. But terminfo doesn&amp;#39;t
+support true colors - and probably it won&amp;#39;t be implemented any time soon, as you can read &lt;a href=&quot;https://lists.gnu.org/archive/html/bug-ncurses/2013-10/msg00007.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This wasn&amp;#39;t the only thing I&amp;#39;ve missed:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;no support for true colors&lt;/li&gt;
+&lt;li&gt;where is the &lt;em&gt;no bold&lt;/em&gt; code (22) stored in the db?&lt;/li&gt;
+&lt;li&gt;where is the reset to &lt;em&gt;default fore- / background color&lt;/em&gt; codes (39/49) stored in the db?&lt;/li&gt;
+&lt;li&gt;there were some more I don&amp;#39;t remember ...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Another drawback when using terminfo would have been the dependency to curses which could be a problem on Windows and for PyPy and other Python interpreters.&lt;/p&gt;
+
+&lt;p&gt;Easy to solve: I just sticked to hard coded ANSI escape code sequences - any ways, these days the escape codes are the same for almost all terminals commonly used.&lt;/p&gt;
+
+&lt;h3&gt;Why you should use colorful in your next project&lt;/h3&gt;
+
+&lt;p&gt;Most of the reasons why you should use colorful in your next terminal project did I already mention above.
+&lt;br&gt;
+But again, here they are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;expressive&lt;/strong&gt; and human friendly &lt;strong&gt;API&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;full 24bit &lt;strong&gt;true color&lt;/strong&gt; support (if your terminal supports that, too)&lt;/li&gt;
+&lt;li&gt;support &lt;strong&gt;8&lt;/strong&gt; and &lt;strong&gt;256 ANSI colors&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;support &lt;strong&gt;X11 color names&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;easily &lt;strong&gt;nest&lt;/strong&gt; styled strings&lt;/li&gt;
+&lt;li&gt;correctly support &lt;strong&gt;string lengths&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;support &lt;strong&gt;custom color palettes&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;support &lt;strong&gt;predefined styles&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;actively maintained&lt;/li&gt;
+&lt;li&gt;thorough unit test suite&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Again, the &lt;a href=&quot;https://github.com/timofurrer/colorful/blob/master/README.md&quot;&gt;documentation&lt;/a&gt; on GitHub has more detailed information about each of these points.&lt;/p&gt;
+
+&lt;p&gt;Have fun with &lt;a href=&quot;https://github.com/timofurrer/colorful&quot;&gt;colorful&lt;/a&gt; :tada:!&lt;/p&gt;</content><author><name>Timo Furrer</name></author><summary type="html">Almost three weeks ago I&amp;#39;ve published an initial release of colorful on PyPI and GitHub and it already got some attention by having a few stars over 200 on GitHub.</summary></entry><entry><title type="html">Das Unicode-Uebel in Domain Names</title><link href="http://localhost:4000/posts/das-unicode-uebel-in-domain-names" rel="alternate" type="text/html" title="Das Unicode-Uebel in Domain Names" /><published>2017-04-22T17:13:50+02:00</published><updated>2017-04-22T17:13:50+02:00</updated><id>http://localhost:4000/posts/das-unicode-uebel-in-domain-names</id><content type="html" xml:base="http://localhost:4000/posts/das-unicode-uebel-in-domain-names">&lt;p&gt;Wie erkennt man eine Phishing Attacke wenn man beispielsweise per E-Mail einen Link bekommt?&lt;/p&gt;
 
 &lt;p&gt;Genau, bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des Mail Programms an, ob die Webseiten Adresse vertraut und richtig ausschaut, oder?
 Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.

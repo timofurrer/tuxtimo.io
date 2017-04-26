@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>colorful - Terminal string styling done right, in Python</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css">
+  <link rel="stylesheet" href="/css/tux.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+</head>
+<body>
+    <div class="container post-container">
+    <article id="post-page">
+        <h2>colorful - Terminal string styling done right, in Python</h2>
+        <span class="post-meta">By Timo Furrer - </span><time datetime="2017-04-26T17:13:50+02:00" class="post-meta">26 Apr 2017</time>
+        <div class="content text-justify">
+            <p>Almost three weeks ago I've published an initial release of <a href="https://github.com/timofurrer/colorful">colorful</a> on PyPI and GitHub
+and it already got some attention by having a few stars over 200 on GitHub.</p>
+
+<p><strong>colorful</strong> is a Python package which provides an expressive and easy to use API to style
+strings to output in your terminal. Hence the short description <em>Terminal string styling done right, in Python</em>.</p>
+
+<p>That's neither a new invention nor the first package in the Python ecosystem which provides similar support.
+Thus, not a big deal ... until you want to:</p>
+
+<ul>
+<li>have full 24bit true color support</li>
+<li>choose between other available color modes like the 8 or 256 ANSI colors</li>
+<li>nest styled strings</li>
+<li>not mess up the <code>len()</code> on your styled strings</li>
+</ul>
+
+<p>All these features were things on my wishlist for quite some time.
+So I've decided to have a look at some popular packages like colorama, termcolor and blessings and see if I can
+come up with some patches which would contribute the above mentioned features.
+After some time digging into the docs and code of those projects I just couldn't fit my features and ideas into
+their architecture, design or set of already available features -
+I wanted to have a clean and human-ready API without having to deal with a legacy one.</p>
+
+<p>A day or two later I did <code>git init colorful</code> and started hacking on it.</p>
+
+<p>In the beginning I just wanted to have some quick prototype to have a proof-of-concept for my API ideas.
+So I didn't even bother about termcap or terminfo at all which turned out to be not that bad of a decision.
+You'll read later why.</p>
+
+<p>Let's have a look at some of the initial API ideas:</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="c1"># Use method names to style strings, like many other support (blessings, coleur, ..)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">colorful</span><span class="o">.</span><span class="n">bold_red</span><span class="p">(</span><span class="s1">'Spam and eggs'</span><span class="p">)</span>
+
+<span class="c1"># Use string formatting</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="s1">'{colorful.bold_red}Spam and eggs{colorful.reset}'</span>
+
+<span class="c1"># combining and piping</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">colorful</span><span class="o">.</span><span class="n">bold</span> <span class="o">&amp;</span> <span class="n">colorful</span><span class="o">.</span><span class="n">red</span> <span class="o">|</span> <span class="s1">'Spam and eggs'</span>
+
+<span class="c1"># nesting</span>
+<span class="n">colorful</span><span class="o">.</span><span class="n">red</span><span class="p">(</span><span class="s1">'red'</span> <span class="o">+</span> <span class="n">colorful</span><span class="o">.</span><span class="n">blue</span><span class="p">(</span><span class="s1">' blue '</span><span class="p">,</span> <span class="n">nested</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'red'</span><span class="p">)</span>
+
+<span class="c1"># string length</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="s1">'Spam and eggs'</span><span class="p">)</span>
+
+<span class="c1"># change the color mode</span>
+<span class="n">colorful</span><span class="o">.</span><span class="n">use_true_colors</span><span class="p">()</span>
+<span class="n">colorful</span><span class="o">.</span><span class="n">use_256_ansi_colors</span><span class="p">()</span>
+<span class="n">colorful</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+</code></pre></div>
+<p>All these features were easier to implement than I initially thought. Most of the time I just had to implement
+the correct data model protocols like <code>__str__</code>, <code>__len__</code>, <code>__add__</code>, <code>__or__</code> on my classes to make my API work.</p>
+
+<p>What helped a lot were my <a href="https://github.com/timofurrer/colorful/tree/master/tests">pytest tests</a> which I've writting in advanced during the thinking process of how one should
+use <em>colorful</em>. I recommend everyone to do the same: to think about how a user of your module or package would like to interact with it.
+That's key when designing an API!</p>
+
+<p>Once I've had my tests passing I started writing some documentation and with that some new feature ideas came up:</p>
+
+<ul>
+<li>support for <a href="https://en.wikipedia.org/wiki/X11_color_names">X11 color names</a>
+</li>
+<li>support for custom color names assigned to custom RGB values</li>
+<li>support for predefined styles</li>
+</ul>
+
+<p>With those ideas <em>colorful</em> gained some new features:</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="c1"># use X11 rgb.txt color names</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">colorful</span><span class="o">.</span><span class="n">lightCoral_on_snow</span><span class="p">(</span><span class="s1">'Spam and eggs'</span><span class="p">)</span>
+
+<span class="c1"># define custom color palettes</span>
+<span class="n">colorful</span><span class="o">.</span><span class="n">update_palette</span><span class="p">({</span><span class="s1">'mint'</span><span class="p">:</span> <span class="s1">'#c5e8c8'</span><span class="p">})</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">colorful</span><span class="o">.</span><span class="n">mint</span><span class="p">(</span><span class="s1">'Spam and eggs'</span><span class="p">)</span>
+
+<span class="c1"># use predefined color styles</span>
+<span class="n">colorful</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s1">'solarized'</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">colorful</span><span class="o">.</span><span class="n">red_on_green</span><span class="p">(</span><span class="s1">'Spam and eggs'</span><span class="p">)</span>
+</code></pre></div>
+<p>At the moment <em>colorful</em>s API was already extended with helper functions like <code>colorful.print()</code> or <code>colorful.format()</code> and more.
+I recommend you to have a look at the documentation here: <a href="https://github.com/timofurrer/colorful">https://github.com/timofurrer/colorful</a></p>
+
+<h3>"done right", doesn't that imply using terminfo?</h3>
+
+<p><em>colorful</em> uses hardcoded ANSI escape sequences to create styled strings. In the beginning this was just meant to be used in the prototype
+and replaced with proper ANSI codes from the appropriate terminfo database once I'm happy with the API.
+However, terminfo turned out to be quite, ..., <em>"outdated"</em>. For example a major feature I wanted to have is true colors. But terminfo doesn't
+support true colors - and probably it won't be implemented any time soon, as you can read <a href="https://lists.gnu.org/archive/html/bug-ncurses/2013-10/msg00007.html">here</a>.</p>
+
+<p>This wasn't the only thing I've missed:</p>
+
+<ul>
+<li>no support for true colors</li>
+<li>where is the <em>no bold</em> code (22) stored in the db?</li>
+<li>where is the reset to <em>default fore- / background color</em> codes (39/49) stored in the db?</li>
+<li>there were some more I don't remember ...</li>
+</ul>
+
+<p>Another drawback when using terminfo would have been the dependency to curses which could be a problem on Windows and for PyPy and other Python interpreters.</p>
+
+<p>Easy to solve: I just sticked to hard coded ANSI escape code sequences - any ways, these days the escape codes are the same for almost all terminals commonly used.</p>
+
+<h3>Why you should use colorful in your next project</h3>
+
+<p>Most of the reasons why you should use colorful in your next terminal project did I already mention above.
+<br>
+But again, here they are:</p>
+
+<ul>
+<li>
+<strong>expressive</strong> and human friendly <strong>API</strong>
+</li>
+<li>full 24bit <strong>true color</strong> support (if your terminal supports that, too)</li>
+<li>support <strong>8</strong> and <strong>256 ANSI colors</strong>
+</li>
+<li>support <strong>X11 color names</strong>
+</li>
+<li>easily <strong>nest</strong> styled strings</li>
+<li>correctly support <strong>string lengths</strong>
+</li>
+<li>support <strong>custom color palettes</strong>
+</li>
+<li>support <strong>predefined styles</strong>
+</li>
+<li>actively maintained</li>
+<li>thorough unit test suite</li>
+</ul>
+
+<p>Again, the <a href="https://github.com/timofurrer/colorful/blob/master/README.md">documentation</a> on GitHub has more detailed information about each of these points.</p>
+
+<p>Have fun with <a href="https://github.com/timofurrer/colorful">colorful</a> <img class="emoji" title=":tada:" alt=":tada:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f389.png" height="20" width="20" align="absmiddle">!</p>
+
+        </div>
+        <hr>
+        <span class="post-meta">Posted under:</span>
+        
+        <span class="label label-default">python</span>
+        
+    </article>
+</div>
+
+</body>
+</html>

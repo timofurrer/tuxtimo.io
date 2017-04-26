@@ -6,7 +6,8 @@ layout: default
     <!-- Posts -->
     <ul id="posts">
 
-        {% for post in site.posts reversed %}
+        {% assign sorted_posts = (site.posts | sort: 'date') | reverse %}
+        {% for post in sorted_posts %}
 
           <li class="post">
             <a href="{% if site.baseurl == "/" %}{{ post.url }}{% else %}{{ post.url | prepend: site.baseurl }}{% endif %}">{%if post.header %}{{ post.header }}{% else %}{{ post.title }}{% endif %}</a> -
