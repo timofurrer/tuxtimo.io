@@ -32,7 +32,7 @@ Was auf [alexa.com](http://аӏеха.com) zu sehen ist, ist eine Demonstration 
 Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.
 
 Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] \(IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
-Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen als Englisch mit nativen Zeichen angezeigt werden koennen.
+Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen, als nur Englisch, mit nativen Zeichen angezeigt werden koennen.
 Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
 Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
 Beispielsweise ist das kleine `a` im latinischen Alphabet kaum vom kleinen kyrillischen `а` zu unterscheiden oder auch das latinische kleine `e` vom kyrillischen kleinen `е`.
@@ -48,6 +48,8 @@ Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlich
 So wird aus der risikobehafteten Adresse [alexa.com](http://www.аӏеха.com) die Adresse [xn--80aao8dw1b.com](http://xn--80aao8dw1b.com), welche nicht mehr so einfach verwechselt wird.
 
 Andere Browser wie Mozilla Firefox oder Opera warten immer noch auf einen entsprechenden Fix.
+Manche dieser Browser, wie beispielsweise Firefox, bieten ihren Benutzern die Moeglichkeit die Webadressen in der Adressleiste immer *Punycode kodiert* anzuzeigen,
+was schon viel hilft eine Phishing Attacke fruehzeitig zu erkennen und die Webseite zu verlassen.
 
 Weitere IDN Homograph Attack Demos sind unter [opera.com](https://орега.com) und [php.net](http://рһр.net) zu finden.
 
