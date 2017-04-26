@@ -22,6 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tuxtimo.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tuxtimo
 github_username:  timofurrer
+header-img: https://avatars2.githubusercontent.com/u/1008252?v=3&s=460
 
 permalink: posts/:title
 

@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
-  <link rel="stylesheet" href="/css/tux.css">
-  <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+  	<link rel="stylesheet" href="/css/tux.css">
+  	<link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+
+	<!-- Twitter cards metadatas -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@tuxtimo">
+	<meta name="twitter:creator" content="@tuxtimo">
+	{% if page.title %}
+	  <meta name="twitter:title" content="{{ page.title }}">
+	{% else %}
+	  <meta name="twitter:title" content="{{ site.title }}">
+	{% endif %}
+	{% if page.url %}
+	  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+	{% endif %}
+	{% if page.author %}
+	  <meta name="twitter:description" content="{{ page.content | strip_html | truncatewords:30 }}">
+	{% else %}
+	  <meta name="twitter:description" content="{{ site.description }}">
+	{% endif %}
+	{% if page.header-img %}
+	  <meta name="twitter:image:src" content="{{ page.header-img }}">
+	{% else %}
+	  <meta name="twitter:image:src" content="{{ site.header-img }}">
+	{% endif %}
 </head>
 <body>
     {{ content }}
