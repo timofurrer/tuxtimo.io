@@ -5,6 +5,10 @@ layout: default
     <article id="post-page">
         <h2>{%if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %}</h2>
         <span class="post-meta">By {{ page.author }} -&nbsp;</span><time datetime="{{ page.date | date_to_xmlschema }}" class="post-meta">{{ page.date | date_to_string }}</time>
+        <span class="post-meta">
+            |
+            <a class="label label-primary" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter"><span class="fa fa-twitter"> Twitter</span></a>
+        </span>
         <div class="content text-justify">
             {{ content }}
         </div>
