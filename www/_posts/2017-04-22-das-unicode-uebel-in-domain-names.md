@@ -17,14 +17,14 @@ Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressl
 Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com, die Daten ueber Seitenabrufe von Webseiten
 sammelt, analysiert und kommerziell zur Verfuegung stellt.
 
-Tun Sie mir den gefallen und besuchen Sie die Firmen Website unter [alexa.com] und anschliessend folgende Website: [alexa.com](http://www.аӏеха.com).
-Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie auch den Unterschied in der Adressleiste entdeckt?
+Tun Sie mir den Gefallen und besuchen Sie die Firmen Website unter [alexa.com] und anschliessend folgende Website: [alexa.com](http://www.аӏеха.com).
+Sicher haben Sie den unterschiedlichen Seiteninhalt bemerkt, doch haben Sie auch den feinen Unterschied in der Adressleiste entdeckt?
 
 <br>
 <img src="https://raw.githubusercontent.com/timofurrer/idn-homograph-attack/master/results/alexa.com_addressbar_comparison.png?token=AA9ifICxTXqP6qtDp-DspmjbFTZaPMxaks5ZBgcEwA%3D%3D" alt="alexa.com firefox addressbar comparison" class="img-responsive center-block img-thumbnail shadow-block">
 <br>
 
-Was geht da vorsich? Ist das wirklich die gleiche Adresse? Ist da eine Malware mit im Spiel?
+Was geht da vor sich? Ist das wirklich die gleiche Adresse? Ist da eine Malware mit im Spiel?
 
 Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen die da in der Adressleisten stehen.
 
