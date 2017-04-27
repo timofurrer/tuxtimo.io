@@ -12,7 +12,7 @@ Genau, bevor man diesen oeffnet schaut man sich vielleicht die Linkvorschau des 
 Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.
 Ist man ein bisschen paranoider schaut man sich vielleicht die Adresse nochmals in der Adressleiste des Browsers an und ueberprueft ein allfaelliges SSL Zertifikat.
 
-Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen von einer Phishing-Seite nicht zu unterscheiden waere? ...
+Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen von einer Phishing-Seite nicht zu unterscheiden waere?
 
 Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com, die Daten ueber Seitenabrufe von Webseiten
 sammelt, analysiert und kommerziell zur Verfuegung stellt.
