@@ -51,10 +51,6 @@ Andere Browser wie Mozilla Firefox oder Opera warten immer noch auf einen entspr
 Manche dieser Browser, wie beispielsweise Firefox, bieten ihren Benutzern die Moeglichkeit die Webadressen in der Adressleiste immer *Punycode kodiert* anzuzeigen,
 was schon viel hilft eine Phishing Attacke fruehzeitig zu erkennen und die Webseite zu verlassen.
 
-Weitere IDN Homograph Attack Demos sind unter [opera.com](https://орега.com) und [php.net](http://рһр.net) zu finden.
-
-
-
 [alexa.com]: http://alexa.com
 [аӏеха.com]: http://аӏеха.com
 [IDN Homograph Attack]: https://en.wikipedia.org/wiki/IDN_homograph_attack
@@ -62,3 +58,8 @@ Weitere IDN Homograph Attack Demos sind unter [opera.com](https://орега.com
 [Interesse der Browserhersteller]: https://bugs.chromium.org/p/chromium/issues/detail?id=683314
 [Punycode]: https://de.wikipedia.org/wiki/Punycode
 [ASCII]: https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange
+[opera.com xxx]: https://орега.com
+[php.net xxx]: http://рһр.net
+
+
+
