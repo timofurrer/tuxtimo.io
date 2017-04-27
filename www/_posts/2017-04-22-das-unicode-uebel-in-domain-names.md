@@ -26,24 +26,24 @@ Sicher haben Sie den unterschiedlichen Seiteninhalt bemerkt, doch haben Sie auch
 
 Was geht da vor sich? Ist das wirklich die gleiche Adresse? Ist da eine Malware mit im Spiel?
 
-Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen die da in der Adressleisten stehen.
+Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen, die da in den Adressleisten stehen.
 
 Was auf [alexa.com](http://аӏеха.com) zu sehen ist, ist eine Demonstration eines sogenannten [IDN Homograph Attack]s.
-Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.
+Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain (URL) zu gestalten die einer anderen visuell sehr aehnelt.
 
 Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] \(IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
-Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen, als nur Englisch, mit nativen Zeichen angezeigt werden koennen.
+Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen, als Englisch, mit nativen Zeichen angezeigt werden koennen.
 Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
 Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
 Beispielsweise ist das kleine `a` im latinischen Alphabet kaum vom kleinen kyrillischen `а` zu unterscheiden oder auch das latinische kleine `e` vom kyrillischen kleinen `е`.
 
 Bereits bei der Einfuehrung von IDN im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.
 
-Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer die Browser fast unmoeglich zu machen ist, gab es immer wieder Probleme beim Versuch
+Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer die Browser fast unmoeglich ist, gab es immer wieder Probleme beim Versuch
 diese "Sicherheitsluecke" in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich, fuer dieses Phishingriskio, verantwortlich zu sein.
 Sie argumentieren damit, dass die Domain Name Registrars dafuer verantwortlich seien nur Domain Names zu vergeben die visuell nicht mit einer bereits registrierten verwechselt werden koennten.
 
-Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng das [Interesse der Browserhersteller], dieses Phishingrisiko zu minimieren, wieder geweckt.
+Ende Januar 2017 hat der chinesische Security Researcher Xudong Zheng das [Interesse der Browserhersteller], dieses Phishingrisiko zu minimieren, wieder geweckt.
 Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlicht, welche Adressen mit Verwechselungsrisiko mit [Punycode] kodiert, sodass diese nur im [ASCII] Zeichensatz darstellt werden.
 So wird aus der risikobehafteten Adresse [alexa.com](http://www.аӏеха.com) die Adresse [xn--80aao8dw1b.com](http://xn--80aao8dw1b.com), welche nicht mehr so einfach verwechselt wird.
 
