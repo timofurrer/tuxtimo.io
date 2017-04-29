@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://tuxtimo.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tuxtimo.me/" rel="alternate" type="text/html" /><updated>2017-04-27T07:34:34+02:00</updated><id>https://tuxtimo.me/</id><title type="html">tuxtimo.me</title><subtitle>This website belongs to an enthusiastic Hacker who loves Free Open Source Software, Linux, Python and Computer Security.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://tuxtimo.me/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tuxtimo.me/" rel="alternate" type="text/html" /><updated>2017-04-29T17:01:07+02:00</updated><id>https://tuxtimo.me/</id><title type="html">tuxtimo.me</title><subtitle>This website belongs to an enthusiastic Hacker who loves Free Open Source Software, Linux, Python and Computer Security.
 </subtitle><entry><title type="html">colorful - Terminal string styling done right, in Python</title><link href="https://tuxtimo.me/posts/colorful-python" rel="alternate" type="text/html" title="colorful - Terminal string styling done right, in Python" /><published>2017-04-26T17:13:50+02:00</published><updated>2017-04-26T17:13:50+02:00</updated><id>https://tuxtimo.me/posts/colorful-python</id><content type="html" xml:base="https://tuxtimo.me/posts/colorful-python">&lt;p&gt;Almost three weeks ago I&amp;#39;ve published an initial release of &lt;a href=&quot;https://github.com/timofurrer/colorful&quot;&gt;colorful&lt;/a&gt; on PyPI and GitHub
 and it already got some attention by having a few stars over 200 on GitHub.&lt;/p&gt;
 
@@ -126,38 +126,38 @@ But again, here they are:&lt;/p&gt;
 Wenn man dann den Link angeklickt hat und sich die gewueschte Webseite oeffnet ist meist schon aller Zweifel, auf eine Phishing Webseite gelangt zu sein, verschwunden.
 Ist man ein bisschen paranoider schaut man sich vielleicht die Adresse nochmals in der Adressleiste des Browsers an und ueberprueft ein allfaelliges SSL Zertifikat.&lt;/p&gt;
 
-&lt;p&gt;Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen von einer Phishing-Seite nicht zu unterscheiden waere? ...&lt;/p&gt;
+&lt;p&gt;Doch was waere wenn die Webseiten Adresse weder in der Vorschau noch der Adressleiste des Browser noch im ausgestellten SSL Zertifikat visuell fuer einen Menschen von einer Phishing-Seite nicht zu unterscheiden waere?&lt;/p&gt;
 
 &lt;p&gt;Kennen Sie die Firma Alexa Internet Inc (Alexa)? Alexa ist eine Tochterfirma von Amazon.com, die Daten ueber Seitenabrufe von Webseiten
 sammelt, analysiert und kommerziell zur Verfuegung stellt.&lt;/p&gt;
 
-&lt;p&gt;Tun Sie mir den gefallen und besuchen Sie die Firmen Website unter &lt;a href=&quot;http://alexa.com&quot;&gt;alexa.com&lt;/a&gt; und anschliessend folgende Website: &lt;a href=&quot;http://www.%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com&quot;&gt;alexa.com&lt;/a&gt;.
-Sie werden den Seiteninhaltsunterschied definitiv bemerkt haben, doch haben Sie auch den Unterschied in der Adressleiste entdeckt?&lt;/p&gt;
+&lt;p&gt;Tun Sie mir den Gefallen und besuchen Sie die Firmen Website unter &lt;a href=&quot;http://alexa.com&quot;&gt;alexa.com&lt;/a&gt; und anschliessend folgende Website: &lt;a href=&quot;http://www.%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com&quot;&gt;alexa.com&lt;/a&gt;.
+Sicher haben Sie den unterschiedlichen Seiteninhalt bemerkt, doch haben Sie auch den feinen Unterschied in der Adressleiste entdeckt?&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
 &lt;img src=&quot;https://raw.githubusercontent.com/timofurrer/idn-homograph-attack/master/results/alexa.com_addressbar_comparison.png?token=AA9ifICxTXqP6qtDp-DspmjbFTZaPMxaks5ZBgcEwA%3D%3D&quot; alt=&quot;alexa.com firefox addressbar comparison&quot; class=&quot;img-responsive center-block img-thumbnail shadow-block&quot;&gt;
 &lt;br&gt;&lt;/p&gt;
 
-&lt;p&gt;Was geht da vorsich? Ist das wirklich die gleiche Adresse? Ist da eine Malware mit im Spiel?&lt;/p&gt;
+&lt;p&gt;Was geht da vor sich? Ist das wirklich die gleiche Adresse? Ist da eine Malware mit im Spiel?&lt;/p&gt;
 
-&lt;p&gt;Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen die da in der Adressleisten stehen.&lt;/p&gt;
+&lt;p&gt;Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen, die da in den Adressleisten stehen.&lt;/p&gt;
 
 &lt;p&gt;Was auf &lt;a href=&quot;http://%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com&quot;&gt;alexa.com&lt;/a&gt; zu sehen ist, ist eine Demonstration eines sogenannten &lt;a href=&quot;https://en.wikipedia.org/wiki/IDN_homograph_attack&quot;&gt;IDN Homograph Attack&lt;/a&gt;s.
-Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain zu gestalten die einer anderen visuell sehr aehnelt.&lt;/p&gt;
+Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain (URL) zu gestalten die einer anderen visuell sehr aehnelt.&lt;/p&gt;
 
 &lt;p&gt;Dies wurde ermoeglicht durch die Implementation von &lt;a href=&quot;https://en.wikipedia.org/wiki/Internationalized_domain_name&quot;&gt;Internationalized domain names&lt;/a&gt; (IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
-Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen, als nur Englisch, mit nativen Zeichen angezeigt werden koennen.
+Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen, als Englisch, mit nativen Zeichen angezeigt werden koennen.
 Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
 Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
 Beispielsweise ist das kleine &lt;code&gt;a&lt;/code&gt; im latinischen Alphabet kaum vom kleinen kyrillischen &lt;code&gt;а&lt;/code&gt; zu unterscheiden oder auch das latinische kleine &lt;code&gt;e&lt;/code&gt; vom kyrillischen kleinen &lt;code&gt;е&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Bereits bei der Einfuehrung von IDN im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.&lt;/p&gt;
 
-&lt;p&gt;Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer die Browser fast unmoeglich zu machen ist, gab es immer wieder Probleme beim Versuch
+&lt;p&gt;Weil jedoch die Unterscheidung zwischen legitimen und Phishing Domain Names fuer die Browser fast unmoeglich ist, gab es immer wieder Probleme beim Versuch
 diese &amp;quot;Sicherheitsluecke&amp;quot; in den Browsern zu beheben. Einige Browserhersteller, wie z.B. Mozilla, weisen auch die Schuld von sich, fuer dieses Phishingriskio, verantwortlich zu sein.
 Sie argumentieren damit, dass die Domain Name Registrars dafuer verantwortlich seien nur Domain Names zu vergeben die visuell nicht mit einer bereits registrierten verwechselt werden koennten.&lt;/p&gt;
 
-&lt;p&gt;Ende Januar 2017 hat der chinesiche Security Researcher Xudong Zheng das &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=683314&quot;&gt;Interesse der Browserhersteller&lt;/a&gt;, dieses Phishingrisiko zu minimieren, wieder geweckt.
+&lt;p&gt;Ende Januar 2017 hat der chinesische Security Researcher Xudong Zheng das &lt;a href=&quot;https://bugs.chromium.org/p/chromium/issues/detail?id=683314&quot;&gt;Interesse der Browserhersteller&lt;/a&gt;, dieses Phishingrisiko zu minimieren, wieder geweckt.
 Daraufhin wurde am 19 April 2017 die Version 58 von Google Chrome veroeffentlicht, welche Adressen mit Verwechselungsrisiko mit &lt;a href=&quot;https://de.wikipedia.org/wiki/Punycode&quot;&gt;Punycode&lt;/a&gt; kodiert, sodass diese nur im &lt;a href=&quot;https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange&quot;&gt;ASCII&lt;/a&gt; Zeichensatz darstellt werden.
 So wird aus der risikobehafteten Adresse &lt;a href=&quot;http://www.%D0%B0%D3%8F%D0%B5%D1%85%D0%B0.com&quot;&gt;alexa.com&lt;/a&gt; die Adresse &lt;a href=&quot;http://xn--80aao8dw1b.com&quot;&gt;xn--80aao8dw1b.com&lt;/a&gt;, welche nicht mehr so einfach verwechselt wird.&lt;/p&gt;
 
