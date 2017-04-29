@@ -46,6 +46,7 @@ s = f'{colorful.bold_red}Spam and eggs{colorful.reset}'
 s = colorful.bold & colorful.red | 'Spam and eggs'
 
 # nesting
+colorful.red('red {0} red'.format(colorful.blue('blue')))
 colorful.red('red' + colorful.blue(' blue ', nested=True) + 'red')
 
 # string length

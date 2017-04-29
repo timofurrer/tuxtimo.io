@@ -79,6 +79,7 @@ You'll read later why.</p>
 <span class="n">s</span> <span class="o">=</span> <span class="n">colorful</span><span class="o">.</span><span class="n">bold</span> <span class="o">&amp;</span> <span class="n">colorful</span><span class="o">.</span><span class="n">red</span> <span class="o">|</span> <span class="s1">'Spam and eggs'</span>
 
 <span class="c1"># nesting</span>
+<span class="n">colorful</span><span class="o">.</span><span class="n">red</span><span class="p">(</span><span class="s1">'red {0} red'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">colorful</span><span class="o">.</span><span class="n">blue</span><span class="p">(</span><span class="s1">'blue'</span><span class="p">)))</span>
 <span class="n">colorful</span><span class="o">.</span><span class="n">red</span><span class="p">(</span><span class="s1">'red'</span> <span class="o">+</span> <span class="n">colorful</span><span class="o">.</span><span class="n">blue</span><span class="p">(</span><span class="s1">' blue '</span><span class="p">,</span> <span class="n">nested</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'red'</span><span class="p">)</span>
 
 <span class="c1"># string length</span>
