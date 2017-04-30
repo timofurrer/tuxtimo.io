@@ -31,11 +31,15 @@ Nein, da ist weder ein Virus im Spiel noch sind das die gleichen Adressen, die d
 Was auf [alexa.com](http://аӏеха.com) zu sehen ist, ist eine Demonstration eines sogenannten [IDN Homograph Attack]s.
 Diese Attacke zeigt, dass es moeglich ist, mit kluger Auswahl von Zeichen aus einem fremden Alphabet eine Domain (URL) zu gestalten die einer anderen visuell sehr aehnelt.
 
-Dies wurde ermoeglicht durch die Implementation von [Internationalized domain names] \(IDN), die es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
+Dies wurde mit die Implementation von [Internationalized domain names] \(IDN) ermoeglicht, welche es erlaubt den ganzen Unicode-Zeichensatz in Domains zu gebrauchen.
 Der Vorteil darin ist, dass Webaddressen auch in anderen Sprachen, als Englisch, mit nativen Zeichen angezeigt werden koennen.
 Das Problematische jedoch ist, dass zwischen gewissen Zeichen aus verschiedenen Alphabeten innerhalb des Unicode-Zeichensatzes bei den meisten Schriftarten visuell kaum mehr unterschieden werden kann.
 Oder dann werden fremde, nicht unterstuetzte Zeichen gar mit den unterstuetzen aehnlich aussehenden komplett ersetzt, was eine Unterscheidung unmoeglich macht.
 Beispielsweise ist das kleine `a` im latinischen Alphabet kaum vom kleinen kyrillischen `а` zu unterscheiden oder auch das latinische kleine `e` vom kyrillischen kleinen `е`.
+
+> "Homograph Attacks sind nichts Neues - Wir hatten dieses Problem schon vor zehn Jahren: Es wurde versucht Internet-Benutzer
+> auf gefaelschte Webseiten zu locken indem ein klein geschriebenes 'l' einem gross geschriebenen 'I' ersetzt worden ist.
+> Ein Benutzer sollte wichtige URLs stets von Hand eintippen!", befragter Informations-Sicherheitsberater
 
 Bereits bei der Einfuehrung von IDN im Jahr 1998 wurden solche Attacken vermutet und seit 2001 sind diese Homograph Attacks auch den Browserherstellern bekannt.
 
