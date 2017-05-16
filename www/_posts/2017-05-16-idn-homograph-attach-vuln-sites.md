@@ -51,7 +51,9 @@ The following domains from the Alexa site are still vulnerable:
 <details>
     <summary>Click here to expand list, [View Raw] or [Download as CSV]</summary>
     <br>
-<pre><code>✓ --> hola.com -> һоӏа.com (Punycode: xn--80a1a03atc.com)
+
+```
+✓ --> hola.com -> һоӏа.com (Punycode: xn--80a1a03atc.com)
 ✓ --> elpais.com -> еӏраіѕ.com (Punycode: xn--80aj7azfe73e.com)
 ✓ --> hespress.com -> һеѕргеѕѕ.com (Punycode: xn--c1adb6b8fda32f.com)
 ✓ --> prpops.com -> ргрорѕ.com (Punycode: xn--c1awebb0k.com)
@@ -824,7 +826,8 @@ The following domains from the Alexa site are still vulnerable:
 ✓ --> yal.cc -> уаӏ.cc (Punycode: xn--80a1b32a.cc)
 ✓ --> epoxy.tv -> ероху.tv (Punycode: xn--e1asfnj.tv)
 ✓ --> lewishowes.com -> ӏеԝіѕһоԝеѕ.com (Punycode: xn--e1aa0azgcc22e2e21aea.com)
-</code></pre>
+```
+
 </details>
 
 [nice article]: https://www.xudongz.com/blog/2017/idn-phishing/
