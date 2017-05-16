@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Alexa Top 1 Million Sites vulnerable to IDN Homograph Attacks"
+title:  "Top 1 Million Sites vulnerable to IDN Homograph Attacks"
 date:   2017-05-16 10:13:50 +0200
 author: Timo Furrer
 categories: infosec phishing
